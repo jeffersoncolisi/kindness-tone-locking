@@ -1,0 +1,19 @@
+tone-invariant-edge-agent/
+├── src/
+│   ├── graph/
+│   │   ├── state.py              # Estado tipado (fatos, histórico de tom, tentativas)
+│   │   ├── nodes.py              # Nós: FactualCore, RhetoricalAligner, DualCritic
+│   │   └── workflow.py           # Grafo LangGraph com loop condicional de refino
+│   ├── prosody/
+│   │   ├── ssml_stabilizer.py    # Normalização de ritmo e cadência para TTS
+│   │   └── audio_bridge.py       # Integração opcional com TTS local/API
+│   └── profiles/
+│       └── voice_personas.yaml   # Perfis paramétricos (eloquência, calor, cadência)
+├── evals/
+│   ├── edge_cases_dataset.json   # Cenários delicados (correção de erro, recusa, más notícias)
+│   ├── drift_metrics.py          # Métricas de continuidade lexical e entonação
+│   └── run_benchmark.py          # Comparativo: Prompt Único vs. Arquitetura Multi-Agente
+├── tests/
+│   └── test_entailment.py        # Garantia de que a polidez não alterou o fato
+├── docker-compose.yml            # App + Langfuse (observabilidade) + Ollama
+└── README.md                     # Diagrama Mermaid + amostras de áudio (Antes vs. Depois)
